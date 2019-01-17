@@ -34,8 +34,7 @@ const loadBlob = async fileName => {
 }
 
 promise_test(async t => {
-  const input = await loadBlob(
-    'http://localhost:8001/clipboard-apis/resources/greenbox.png');
+  const input = await loadBlob('resources/greenbox.png');
 
   await navigator.clipboard.writeImageExperimental(input);
   const output = await navigator.clipboard.readImageExperimental();
